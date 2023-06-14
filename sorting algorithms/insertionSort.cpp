@@ -18,16 +18,16 @@ void insertion(int ar[], int n){
 }
 
 void insertionSort(int ar[],int n){
+    //for loop to iterate from the second element as the first one we consider as sorted. 
     for(int i = 1; i < n-1; i++){
-        int temp = ar[i];
-        int j = i - 1;
+        int temp = ar[i]; //saving the element in a temp variable.
+        int j = i - 1; //setting up j to iterate left side of ar[i]
 
-        while(j >= 0 && temp < ar[j]){
-                ar[j+1] = ar[j];
-                
-            j--;
+        while(j >= 0 && temp < ar[j]){ //going left side to compare the elements
+                ar[j+1] = ar[j];  //shifting elements one step to right
+            j--;  //iterating left of the array.
         }
-        ar[j+1] = temp;
+        ar[j+1] = temp; //out of loop now placing the a[i] element in front.
     }
 }
 
