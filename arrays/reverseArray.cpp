@@ -11,7 +11,7 @@ void printArray(int ar[], int n){
 void reverse(int ar[], int n){
     int temp;
     int i = 0, j = n-1;
-    while(i < j){
+    while(i <= j){
         //swap the elements at index i and j
         temp = ar[i];
         ar[i] = ar[j];
