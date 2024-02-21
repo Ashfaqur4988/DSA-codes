@@ -41,6 +41,7 @@ void sort012(int arr[], int n){
     cout<<endl;
 }
 
+//optimized solution
 void sort012Optimized(int arr[], int n){
         int l = 0;
         int h = n-1;
