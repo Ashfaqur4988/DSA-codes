@@ -88,15 +88,15 @@ vector<vector<int>> setZeroesOp(vector<vector<int>> matrix, int row, int col)
     {
         for (int i = 0; i < row; i++)
         {
-            matrix[i][0] = 0;
+            matrix[0][i] = 0;
         }
+    }
 
-        if (col0 == 0)
+    if (col0 == 0)
+    {
+        for (int j = 0; j < col; j++)
         {
-            for (int j = 0; j < col; j++)
-            {
-                matrix[0][j] = 0;
-            }
+            matrix[j][0] = 0;
         }
     }
 
