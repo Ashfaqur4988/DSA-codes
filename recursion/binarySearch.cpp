@@ -9,18 +9,21 @@ int binarySearch(int arr[], int s, int e, int key)
     {
         return false;
     }
+    // processing
     int mid = s + (e - s) / 2;
     if (arr[mid] == key)
     {
         return mid;
     }
 
-    if (arr[mid < key])
+    if (mid < key)
     {
+        // recursive relation
         return binarySearch(arr, mid + 1, e, key);
     }
     else
     {
+        // recursive relation
         return binarySearch(arr, s, mid - 1, key);
     }
 }
