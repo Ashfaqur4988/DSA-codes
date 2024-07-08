@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 using namespace std;
 class Node
 {
@@ -69,6 +70,42 @@ void postOrder(Node *root)
     postOrder(root->left);
     postOrder(root->right);
     cout << root->data << " ";
+}
+
+void buildFromLevelOrder(Node *&root)
+{
+    queue<Node *> q;
+    cout << "enter data for root" << endl;
+    int data;
+    cin >> data;
+    root = new Node(data);
+    q.push(root);
+
+    while (!q.empty())
+    {
+        Node *temp = q.front();
+        q.pop();
+
+        cout << "enter left node for: " << root->data << endl;
+        int leftData;
+        cin >> leftData;
+
+        if (leftData != -1)
+        {
+            temp->left = new Node(leftData);
+            q.push(temp->left);
+        }
+
+        cout << "enter right node for: " << root->data << endl;
+        int rightData;
+        cin >> rightData;
+
+        if (rightData != -1)
+        {
+            temp->right = new Node(rightData);
+            q.push(temp->right);
+        }
+    }
 }
 
 int main()
