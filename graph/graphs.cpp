@@ -37,6 +37,7 @@ int main()
         // only one link
         weighted[u].push_back(v);
     }
+    // weighted graph list store
 
     return 0;
 }
