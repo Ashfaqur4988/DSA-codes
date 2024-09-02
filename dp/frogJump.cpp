@@ -40,19 +40,19 @@ for (int i = 1; i < n; i++)
 return dp[n - 1];
 
 // space optimization
+int n = nums.size();
+int prev = nums[0];
 int prev2 = 0;
-int prev = 0;
 
 for (int i = 1; i < n; i++)
 {
-    int l = prev + abs(heights[i] - heights[i - 1]);
-    int r = INT_MAX;
+    int p = nums[i];
     if (i > 1)
-    {
-        r = prev2 + abs(heights[i] - heights[i - 2]);
-    }
-    int curr = min(l, r);
+        p += prev2;
 
+    int np = 0 + prev;
+
+    int curr = max(p, np);
     prev2 = prev;
     prev = curr;
 }
